@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flockManager: {fileID: 0}
+  flocking: 0
 --- !u!1001 &6705813192665505929
 PrefabInstance:
   m_ObjectHideFlags: 0
