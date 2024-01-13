@@ -5,6 +5,7 @@ using UnityEngine;
 public class PigeonFlock : MonoBehaviour
 {   
     public PigeonFlockingManager flockManager;
+    public bool flocking = false;
     private float speed;
     // Start is called before the first frame update
     void Start()
@@ -14,17 +15,18 @@ public class PigeonFlock : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        if (Random.Range(0, 100) < 10) {
+    {   if (flocking) {
+            if (Random.Range(0, 100) < 10) {
 
-            speed = Random.Range(flockManager.minSpeed, flockManager.maxSpeed);    
+                speed = Random.Range(flockManager.minSpeed, flockManager.maxSpeed);    
+            }
+
+            // if (Random.Range(0, 100) < 10) {
+            ApplyFlockingRules();
+            // }
+
+            transform.Translate(new Vector3(0, 0, speed * Time.deltaTime));
         }
-
-        // if (Random.Range(0, 100) < 10) {
-        ApplyFlockingRules();
-        // }
-
-        transform.Translate(new Vector3(0, 0, speed * Time.deltaTime));
     }
 
     private void ApplyFlockingRules() {
