@@ -8,12 +8,15 @@ public class PlayerMovement : MonoBehaviour
     public GameObject capsule;
     public GameObject boxFab;
     public float moveSpeed = 5f; // Adjust this value to set the movement speed.
-
+    public float moveForce = 10.0f; // Force to apply for movement
+    public float maxVelocity = 5.0f;
+    private Rigidbody rb;
+    
     void Start()
     {
         boxes = new List<GameObject>();
         // Freeze rotation on the X and Z axes.
-        Rigidbody rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
         if (rb != null)
         {
             rb.freezeRotation = true;
@@ -48,7 +51,13 @@ public class PlayerMovement : MonoBehaviour
         }
         
         // Move the Rigidbody.
-        transform.Translate(movement);
+        Vector3 force = new Vector3(horizontalInput, 0f, verticalInput) * moveForce;
+
+        // Apply the force to the Rigidbody
+        rb.AddForce(force);
+
+        // Clamp the velocity to simulate sliding effect without infinite acceleration
+        rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxVelocity);
     }
 
     void OnCollisionEnter()
