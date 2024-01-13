@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "404GameJam1.sln"
+    "dotnet.defaultSolution": "404-Game-Jam-1.sln"
 }
