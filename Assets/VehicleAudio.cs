@@ -12,6 +12,7 @@ public class VehicleAudio : MonoBehaviour
 
         if (hasNotPlayed && ((player.transform.position - transform.position).magnitude <= distance)) {
             GetComponent<AudioSource>().Play();
+            hasNotPlayed = false;
         }
 
     }

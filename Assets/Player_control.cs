@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     
     void Start()
     {
+        GetComponent<AudioSource>().Play();
         boxes = new List<GameObject>();
         // Freeze rotation on the X and Z axes.
         rb = GetComponent<Rigidbody>();
@@ -33,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
             boxes.Add(child);
             child.transform.position = new Vector3(0, i+1, 0);
         }
-        boxes[boxes.Count-1].GetComponent<HingeJoint>().connectedBody = boxes[boxes.Count-2].GetComponent<Rigidbody>();
+        // boxes[boxes.Count-1].GetComponent<HingeJoint>().connectedBody = boxes[boxes.Count-2].GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -47,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
         
         foreach (GameObject go in boxes)
         {
-            go.GetComponent<Rigidbody>().AddForce(new Vector3(0, 100f, 0));
+            // go.GetComponent<Rigidbody>().AddForce(new Vector3(0, 100f, 0));
         }
         
         // Move the Rigidbody.

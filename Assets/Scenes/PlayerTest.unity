@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.50607026, g: 0.49809128, b: 0.40699098, a: 1}
+  m_IndirectSpecularColor: {r: 0.4421275, g: 0.54940146, b: 0.66299355, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -143,6 +143,14 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6460851165396718668, guid: 6418e82e0f96c9744a2c61b7bd4a993a, type: 3}
+      propertyPath: boxFab
+      value: 
+      objectReference: {fileID: 2389163109763184929, guid: 661fe10a192854083bbf5e0cb64a58a0, type: 3}
+    - target: {fileID: 6460851165396718668, guid: 6418e82e0f96c9744a2c61b7bd4a993a, type: 3}
+      propertyPath: capsule
+      value: 
+      objectReference: {fileID: 651728162}
     - target: {fileID: 6686245957669267056, guid: 6418e82e0f96c9744a2c61b7bd4a993a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -191,6 +199,11 @@ PrefabInstance:
       addedObject: {fileID: 1330575909}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6418e82e0f96c9744a2c61b7bd4a993a, type: 3}
+--- !u!1 &651728162 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6437677021088397925, guid: 6418e82e0f96c9744a2c61b7bd4a993a, type: 3}
+  m_PrefabInstance: {fileID: 124844497}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &772230463 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6686245957669267056, guid: 6418e82e0f96c9744a2c61b7bd4a993a, type: 3}

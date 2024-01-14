@@ -17,7 +17,6 @@ public class StartButton : MonoBehaviour
 
     void TaskOnClick()
     {
-        Debug.Log("You have clicked the button!");   
         SceneManager.LoadScene(sceneToLoad); // Load the specified scene
     }
 }
